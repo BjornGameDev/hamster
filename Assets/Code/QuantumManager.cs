@@ -229,7 +229,7 @@ public class QuantumManager : MonoBehaviour
     IEnumerator echo2(Vector3[] res)
     {
         yield return new WaitForSeconds(0.66f);
-
+        plotEcho2 = res;
     }
     public class RingBuffer
     {
