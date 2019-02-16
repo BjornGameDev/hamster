@@ -7323,6 +7323,8 @@ MonoBehaviour:
   MaxGradientThreshold: 10
   m_growthBuffer: 10
   m_plotRenderer: {fileID: 2126921297}
+  plot2: {fileID: 206576058}
+  plot3: {fileID: 1654393243}
   m_plotAccuracy: 1
   m_plotVisualizeMode: 1
   m_noise: 0
