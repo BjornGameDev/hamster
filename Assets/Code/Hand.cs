@@ -7,6 +7,8 @@ public class Hand : MonoBehaviour
     private QuantumManager _quantumMananger;
     public string handName = "leftHand";
     private Vector3 _initialPosition;
+    public float speed = 15;
+    public AnimationCurve animationCurve;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,10 @@ public class Hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(_initialPosition.x + (_quantumMananger.getWellPosition(handName)*10), _initialPosition.y, 0);
+        if (_quantumMananger.plotPositions.Length > 0)
+        {
+            float wellPosition = _quantumMananger.getWellPosition(handName);
+            transform.position = new Vector3(_initialPosition.x + (wellPosition * speed * animationCurve.Evaluate(1f)), _initialPosition.y, 0);
+        }
     }
 }
