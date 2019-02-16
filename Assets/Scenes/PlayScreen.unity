@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -897,6 +897,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -968,6 +969,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ea95df380a882e408c8110ad3ea30e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 0bf6c338e36b97d42b770a1b88fca963, type: 3}
+  displacementMap: {fileID: 2800000, guid: dffef66376be4fa480fb02b19edbe903, type: 3}
+  intensity: 0.606
+  flipIntensity: 0.281
+  colorIntensity: 0.69
 --- !u!1 &643364087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +1920,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fb2dc3253cd534b9c32608bf629815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plotPositions: []
+  plotEcho1: []
+  plotEcho2: []
   m_updateFrequency: 60
   MaxGradientThreshold: 10
   m_growthBuffer: 10
