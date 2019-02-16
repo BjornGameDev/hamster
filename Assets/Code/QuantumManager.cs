@@ -19,6 +19,11 @@ public class QuantumManager : MonoBehaviour
     private float rightInput = 0;
 
 
+    public float getWellPosition(string handName)
+    {
+        return (handName == "leftHand" ? leftWell + 0.75f : rightWell - 0.75f);
+    }
+
     private static QuantumManager m_instance;
     public static QuantumManager Instance
     {
