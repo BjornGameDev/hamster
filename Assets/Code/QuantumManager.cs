@@ -46,8 +46,6 @@ public class QuantumManager : MonoBehaviour
     [SerializeField] private float MaxGradientThreshold = 10f;
     [SerializeField] private int m_growthBuffer = 10;
     [SerializeField] private LineRenderer m_plotRenderer;
-    [SerializeField] private LineRenderer plotRenderer1;
-    [SerializeField] private LineRenderer plotRenderer2;
     [SerializeField] private PlotAccuracy m_plotAccuracy = PlotAccuracy.Max;
     [SerializeField] private VisualizeMode m_plotVisualizeMode;
     [Range(-0.25f, 0.25f)]
@@ -181,6 +179,24 @@ public class QuantumManager : MonoBehaviour
     }
 
 
+    private bool canMove(float value, float input)
+    {
+        bool canMove = false;
+
+        value = Mathf.Abs(value);
+        if(value + input < 0.1f)
+        {
+            canMove = true;
+        }
+
+        if(value + input > 1.49f)
+        {
+            canMove = true;
+        }
+
+        return canMove;
+    }
+
     /// <summary>
     /// Runs a single step of the simulation and handles the results
     /// </summary>
@@ -192,8 +208,9 @@ public class QuantumManager : MonoBehaviour
         // Add a using Py.GIL() block whenever interacting with Python wrapper classes such as StirapEnv
         using (Py.GIL())
         {
-            float leftClamp = (leftWell > -1.49f && leftWell < -0.1 ? leftInput : 0 );
-            float rightClamp = (rightWell > 0.1f && rightWell < 1.49f ? rightInput * -1 : 0 );
+
+            float leftClamp = (canMove(leftWell, leftInput) ? leftInput : 0);
+            float rightClamp = (canMove(rightWell, rightInput) ? rightInput * -1 : 0);
 
             float left = leftClamp * deltaTime;
             float right = rightClamp * deltaTime;
@@ -232,9 +249,6 @@ public class QuantumManager : MonoBehaviour
             v.Add(new Vector3(i * x_step - xx/2f, (float)c.Magnitude*3, 0f));
         }
 
-
-       
-
         Vector3[] res = v.ToArray();
         m_plotRenderer.SetPositions(res);
         plotPositions = res;
@@ -243,15 +257,13 @@ public class QuantumManager : MonoBehaviour
     }
     IEnumerator echo1(Vector3[] res)
     {
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.33f);
         plotEcho1 = res;
-        plotRenderer1.SetPositions(res);
     }
     IEnumerator echo2(Vector3[] res)
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.66f);
         plotEcho2 = res;
-        plotRenderer2.SetPositions(res);
     }
     public class RingBuffer
     {
