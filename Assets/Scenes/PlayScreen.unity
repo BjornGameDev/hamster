@@ -131,6 +131,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handName: leftHand
+  speed: 15
+  animationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &206576057
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +904,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6df8f0f2d12048458ee7aa1c375a20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qm: {fileID: 1783946149}
+  lr: {fileID: 2126921297}
+  sizeIndex: 15
+  speedIndex: 13
+  emissionIndex: 55
+  rindex: 23
+  gindex: 45
+  bindex: 47
 --- !u!199 &617025196
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -1043,7 +1056,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7
+      scalar: 14
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5666,6 +5679,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handName: rightHand
+  speed: 15
+  animationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &858738516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6653,8 +6673,6 @@ MonoBehaviour:
   MaxGradientThreshold: 10
   m_growthBuffer: 10
   m_plotRenderer: {fileID: 2126921297}
-  plotRenderer1: {fileID: 206576058}
-  plotRenderer2: {fileID: 1654393243}
   m_plotAccuracy: 1
   m_plotVisualizeMode: 1
   m_noise: -0.06400000303983688
