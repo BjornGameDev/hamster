@@ -104,9 +104,6 @@ public class QuantumDemoManager : MonoBehaviour
         m_leftColor = m_leftRagdollHanger.GetComponent<MaterialColorChanger>();
         m_midColor = m_midRagdollHanger.GetComponent<MaterialColorChanger>();
         m_rightColor = m_rightRagdollHanger.GetComponent<MaterialColorChanger>();
-
-        
-
     }
 
     private void ResetGrowthMeasures()
