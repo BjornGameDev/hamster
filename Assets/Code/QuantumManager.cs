@@ -109,8 +109,8 @@ public class QuantumManager : MonoBehaviour
  
         }
 
-        leftInput = (Input.GetAxis("LeftTrigger")  - 0.5f)*2;
-        rightInput = (Input.GetAxis("RightTrigger") - 0.5f)*2;
+        leftInput = Input.GetAxis("LeftTrigger");
+        rightInput = Input.GetAxis("RightTrigger");
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -210,7 +210,7 @@ public class QuantumManager : MonoBehaviour
         {
 
             float leftClamp = (canMove(leftWell, leftInput) ? leftInput : 0);
-            float rightClamp = (canMove(rightWell, rightInput) ? rightInput * -1 : 0);
+            float rightClamp = (canMove(rightWell, rightInput * -1) ? rightInput : 0);
 
             float left = leftClamp * deltaTime;
             float right = rightClamp * deltaTime;

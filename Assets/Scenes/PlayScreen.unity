@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handName: leftHand
-  speed: 15
+  speed: 10
   animationCurve:
     serializedVersion: 2
     m_Curve: []
@@ -5679,7 +5679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handName: rightHand
-  speed: 15
+  speed: 10
   animationCurve:
     serializedVersion: 2
     m_Curve: []
@@ -6524,7 +6524,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732149152}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.831, z: 0}
+  m_LocalPosition: {x: -6.8899994, y: 6.731, z: 0}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6669,7 +6669,7 @@ MonoBehaviour:
   plotPositions: []
   plotEcho1: []
   plotEcho2: []
-  m_updateFrequency: 60
+  m_updateFrequency: 15
   MaxGradientThreshold: 10
   m_growthBuffer: 10
   m_plotRenderer: {fileID: 2126921297}
@@ -6729,7 +6729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981834880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: -6.89, y: 5.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 858738517}
