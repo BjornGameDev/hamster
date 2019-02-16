@@ -7265,7 +7265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69707e579131c96419f0bef5f9575757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helpSpeed: 0.2
+  helpSpeed: 0.25
 --- !u!50 &1732149157
 Rigidbody2D:
   serializedVersion: 4
@@ -7325,8 +7325,8 @@ MonoBehaviour:
   m_plotRenderer: {fileID: 2126921297}
   m_plotAccuracy: 1
   m_plotVisualizeMode: 1
-  m_noise: -0.06400000303983688
-  m_randomizeNoise: 1
+  m_noise: 0
+  m_randomizeNoise: 0
   TimeSteps: 400
 --- !u!4 &1783946150
 Transform:
