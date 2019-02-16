@@ -13,6 +13,12 @@ public class QuantumManager : MonoBehaviour
     public Vector3[] plotEcho1;
     public Vector3[] plotEcho2;
 
+    private float leftWell = 0;
+    private float rightWell = 0;
+    private float leftInput = 0;
+    private float rightInput = 0;
+
+
     private static QuantumManager m_instance;
     public static QuantumManager Instance
     {
@@ -166,12 +172,6 @@ public class QuantumManager : MonoBehaviour
         m_env.Reset();    
     }
 
-    private float leftWell = 0;
-    private float rightWell = 0;
-
-
-    private float leftInput = 0;
-    private float rightInput = 0;
 
     /// <summary>
     /// Runs a single step of the simulation and handles the results
