@@ -81,6 +81,8 @@ public class QuantumManager : MonoBehaviour
     void Start()
     {
         ResetUI();
+        if (m_state != State.Started)
+            StartGame();
     }
 
     private void ResetGrowthMeasures()
@@ -99,8 +101,7 @@ public class QuantumManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            if (m_state != State.Started)
-                StartGame();        
+ 
         }
 
         leftInput = (Input.GetAxis("LeftTrigger")  - 0.5f)*2;
@@ -221,8 +222,12 @@ public class QuantumManager : MonoBehaviour
         for (int i=0; i<len-step+1; i+=step)
         {
             Complex c = result.WavePoints[i];
-            v.Add(new Vector3(i * x_step - xx/2f, (float)c.Magnitude, 0f));
+            v.Add(new Vector3(i * x_step - xx/2f, (float)c.Magnitude*3, 0f));
         }
+
+
+       
+
         Vector3[] res = v.ToArray();
         m_plotRenderer.SetPositions(res);
         plotPositions = res;

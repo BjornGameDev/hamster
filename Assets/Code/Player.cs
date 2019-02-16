@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
         {
             int i = Mathf.RoundToInt(((transform.position.x + 20f) / 40f) * positions.Length);
             transform.position = new Vector3(transform.position.x, positions[i].y, 0);
+
+
+
         }
     }
 }
