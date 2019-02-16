@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D _rigidBody2D;
     private QuantumManager _quantumMananger;
+    public float helpSpeed = 0.2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
         {
             int i = Mathf.RoundToInt(((transform.position.x + 20f) / 40f) * positions.Length);
             float difference = positions[i].y - positions[i + 1].y;
-            _rigidBody2D.AddForce(new Vector2(difference*20,0));
+            _rigidBody2D.AddForce(new Vector2((difference*20)+helpSpeed,0));
             //transform.position = new Vector3(transform.position.x, positions[i].y, 0);
         }
     }
