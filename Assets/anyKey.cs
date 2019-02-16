@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class anyKey : MonoBehaviour
 {
+    public bool PressAnyKey;
     public string loadableScreen;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +33,13 @@ public class anyKey : MonoBehaviour
         }
         
 }
-
+    private void Update()
+    {
+        if(canchange && PressAnyKey && Input.anyKeyDown)
+        {
+            change();
+        }
+    }
     IEnumerator changeScene()
     {
         yield return new WaitForEndOfFrame();

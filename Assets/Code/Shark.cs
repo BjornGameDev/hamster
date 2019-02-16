@@ -22,4 +22,14 @@ public class Shark : MonoBehaviour
             transform.position = new Vector3(transform.position.x+difference, positions[i].y, 0);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.collider.name == "Hamster")
+        {
+            PlayerPrefs.SetString("endText", "The shark has \neaten the hamster.\nNom nom.");
+        }
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<levelController>().endLevel();
+    }
 }

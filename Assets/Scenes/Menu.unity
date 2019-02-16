@@ -746,7 +746,7 @@ GameObject:
   - component: {fileID: 966491837}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -819,6 +819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7185b1109af54d047a45b3c967fc7296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PressAnyKey: 0
   loadableScreen: PlayScreen
 --- !u!1 &976484818
 GameObject:
