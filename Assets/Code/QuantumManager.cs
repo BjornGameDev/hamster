@@ -41,6 +41,8 @@ public class QuantumManager : MonoBehaviour
     [SerializeField] private float MaxGradientThreshold = 10f;
     [SerializeField] private int m_growthBuffer = 10;
     [SerializeField] private LineRenderer m_plotRenderer;
+    [SerializeField] private LineRenderer plotRenderer1;
+    [SerializeField] private LineRenderer plotRenderer2;
     [SerializeField] private PlotAccuracy m_plotAccuracy = PlotAccuracy.Max;
     [SerializeField] private VisualizeMode m_plotVisualizeMode;
     [Range(-0.25f, 0.25f)]
@@ -236,13 +238,15 @@ public class QuantumManager : MonoBehaviour
     }
     IEnumerator echo1(Vector3[] res)
     {
-        yield return new WaitForSeconds(0.33f);
+        yield return new WaitForSeconds(0.15f);
         plotEcho1 = res;
+        plotRenderer1.SetPositions(res);
     }
     IEnumerator echo2(Vector3[] res)
     {
-        yield return new WaitForSeconds(0.66f);
+        yield return new WaitForSeconds(0.3f);
         plotEcho2 = res;
+        plotRenderer2.SetPositions(res);
     }
     public class RingBuffer
     {
