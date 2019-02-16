@@ -9,6 +9,10 @@ using Vector3 = UnityEngine.Vector3;
 
 public class QuantumManager : MonoBehaviour
 {
+    public Vector3[] plotPositions;
+    public Vector3[] plotEcho1;
+    public Vector3[] plotEcho2;
+
     private static QuantumManager m_instance;
     public static QuantumManager Instance
     {
@@ -211,9 +215,22 @@ public class QuantumManager : MonoBehaviour
             Complex c = result.WavePoints[i];
             v.Add(new Vector3(i * x_step - xx/2f, (float)c.Magnitude, 0f));
         }
-        m_plotRenderer.SetPositions(v.ToArray());
+        Vector3[] res = v.ToArray();
+        m_plotRenderer.SetPositions(res);
+        plotPositions = res;
+        StartCoroutine(echo1(res));
+        StartCoroutine(echo2(res));
     }
+    IEnumerator echo1(Vector3[] res)
+    {
+        yield return new WaitForSeconds(0.33f);
+        plotEcho1 = res;
+    }
+    IEnumerator echo2(Vector3[] res)
+    {
+        yield return new WaitForSeconds(0.66f);
 
+    }
     public class RingBuffer
     {
         private List<float> m_buffer = new List<float>();
