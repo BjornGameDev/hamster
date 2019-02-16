@@ -24,7 +24,7 @@ public class Hand : MonoBehaviour
         if (_quantumMananger.plotPositions.Length > 0)
         {
             float wellPosition = _quantumMananger.getWellPosition(handName);
-            transform.position = new Vector3(_initialPosition.x + (wellPosition * speed * animationCurve.Evaluate(1f)), _initialPosition.y, 0);
+            transform.position = new Vector3(_initialPosition.x + (wellPosition * speed), _initialPosition.y, 0);
         }
     }
 }
