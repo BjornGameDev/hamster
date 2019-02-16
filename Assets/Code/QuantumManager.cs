@@ -92,7 +92,10 @@ public class QuantumManager : MonoBehaviour
             if (m_state != State.Started)
                 StartGame();        
         }
-         
+
+        leftInput = (Input.GetAxis("LeftTrigger")  - 0.5f)*2;
+        rightInput = (Input.GetAxis("RightTrigger") - 0.5f)*2;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             StopAllCoroutines();
@@ -162,6 +165,10 @@ public class QuantumManager : MonoBehaviour
     private float leftWell = 0;
     private float rightWell = 0;
 
+
+    private float leftInput = 0;
+    private float rightInput = 0;
+
     /// <summary>
     /// Runs a single step of the simulation and handles the results
     /// </summary>
@@ -170,15 +177,16 @@ public class QuantumManager : MonoBehaviour
     private bool RunStep(int step, float deltaTime)
     {
         StirapEnv.StepResult result;
-        
         // Add a using Py.GIL() block whenever interacting with Python wrapper classes such as StirapEnv
         using (Py.GIL())
         {
-            float left = 0 * deltaTime;
-            float right = 0 * deltaTime;
+            float leftClamp = (leftWell > -1.49f && leftWell < -0.1 ? leftInput : 0 );
+            float rightClamp = (rightWell > 0.1f && rightWell < 1.49f ? rightInput * -1 : 0 );
+
+            float left = leftClamp * deltaTime;
+            float right = rightClamp * deltaTime;
             result = m_env.Step(left, right);
         }
-
 
 
         float leftPop = result.LeftPopulation;
