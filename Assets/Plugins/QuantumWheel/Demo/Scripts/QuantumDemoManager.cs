@@ -296,7 +296,7 @@ public class QuantumDemoManager : MonoBehaviour
                 v.Add(new Vector3((float) c.Real, (float) c.Imaginary, 0f));
             
             if (m_plotVisualizeMode == VisualizeMode.ComplexMagnitude)
-                v.Add(new Vector3(i * x_step - xx/2f, (float)c.Magnitude*3, 0f));
+                v.Add(new Vector3(i * x_step - xx/2f, (float)c.Magnitude, 0f));
         }
         m_plotRenderer.SetPositions(v.ToArray());
     }
