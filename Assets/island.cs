@@ -11,6 +11,7 @@ public class island : MonoBehaviour
         {
             PlayerPrefs.SetString("endText", "The hamster has\nreached the island");
             GameObject.FindGameObjectWithTag("GameController").GetComponent<levelController>().endLevel();
+            GetComponent<AudioSource>().Play();
         }
         else if (collision.name == "Shark")
         {
