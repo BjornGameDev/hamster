@@ -30,7 +30,7 @@ public class Hand : MonoBehaviour
               //  verticalSpeed = Mathf.Clamp(verticalSpeed + (Time.deltaTime * Input.GetAxis("RightHandSpeed") * -1), 1, 3);
 
             }
-            transform.position = new Vector3(_initialPosition.x + (wellPosition * speed), _initialPosition.y , 0);
+            transform.position = new Vector3(_initialPosition.x + (wellPosition * speed), _initialPosition.y , transform.position.z);
 
         }
     }
