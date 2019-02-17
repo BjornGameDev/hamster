@@ -28,9 +28,9 @@ public class Shark : MonoBehaviour
         var dist = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
         
         var val = Random.value*10;
-        Mathf.Clamp(dist, 0, 10);
+        dist= Mathf.Clamp(dist, 0, 10);
         GetComponent<AudioSource>().volume = 1 - dist / 10;
-        if (val > dist) 
+        if (val <2) 
             GetComponent<AudioSource>().Play();
     }
 
