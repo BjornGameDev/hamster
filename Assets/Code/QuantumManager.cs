@@ -137,7 +137,7 @@ public class QuantumManager : MonoBehaviour
             //plotPositions = new Vector3[plotBuffer.Length];
             for(int i = 0; i < plotBuffer.Length; i++)
             {
-                plotPositions[i] = Vector3.Lerp(plotPositions[i], plotBuffer[i], Time.deltaTime);
+                plotPositions[i] = Vector3.Lerp(plotPositions[i], plotBuffer[i], Time.deltaTime*3);
             }
             m_plotRenderer.SetPositions(plotPositions);
             plot2.SetPositions(plotBuffer);
