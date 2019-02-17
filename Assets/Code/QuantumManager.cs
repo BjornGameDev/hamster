@@ -121,8 +121,8 @@ public class QuantumManager : MonoBehaviour
  
         }
 
-        leftInput = Input.GetAxis("LeftTrigger") * 0.8f;
-        rightInput = Input.GetAxis("RightTrigger") * 0.8f;
+        leftInput = Input.GetAxis("LeftTrigger");
+        rightInput = Input.GetAxis("RightTrigger");
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             StopAllCoroutines();
