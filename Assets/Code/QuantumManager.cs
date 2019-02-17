@@ -12,6 +12,7 @@ public class QuantumManager : MonoBehaviour
     public Vector3[] plotPositions;
     public Vector3[] plotEcho1;
     public Vector3[] plotEcho2;
+    private Vector3[] plotBuffer;
 
     private float leftWell = 0;
     private float rightWell = 0;
@@ -87,6 +88,12 @@ public class QuantumManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        plotBuffer = new Vector3[512];
+        plotPositions = new Vector3[512];
+        for(int i = 0; i < plotPositions.Length; i++)
+        {
+            plotPositions[i] = new Vector3(((40/512)*i)-20f, 0, 0);
+        }
         ResetUI();
         if (m_state != State.Started)
             StartGame();
@@ -119,6 +126,32 @@ public class QuantumManager : MonoBehaviour
             Application.Quit();
         }
 
+
+        //Update plot buffer
+
+        if(plotBuffer.Length > 0)
+        {
+            //plotPositions = new Vector3[plotBuffer.Length];
+            for(int i = 0; i < plotBuffer.Length; i++)
+            {
+                plotPositions[i] = Vector3.Lerp(plotPositions[i], plotBuffer[i], Time.deltaTime);
+            }
+            m_plotRenderer.SetPositions(plotPositions);
+            StartCoroutine(echo1(plotPositions));
+            StartCoroutine(echo2(plotPositions));
+        }
+    }
+
+
+    IEnumerator echo1(Vector3[] res)
+    {
+        yield return new WaitForSeconds(0.1f);
+        plot2.SetPositions(res);
+    }
+    IEnumerator echo2(Vector3[] res)
+    {
+        yield return new WaitForSeconds(0.2f);
+        plot3.SetPositions(res);
     }
 
     public void StartGame()
@@ -251,22 +284,12 @@ public class QuantumManager : MonoBehaviour
         }
 
         Vector3[] res = v.ToArray();
-        m_plotRenderer.SetPositions(res);
-        plotPositions = res;
-        StartCoroutine(echo1(res));
-        StartCoroutine(echo2(res));
-    }
-    IEnumerator echo1(Vector3[] res)
-    {
-        yield return new WaitForSeconds(0.1f);
+        plotBuffer = res;
+        //plotPositions = res;
 
-        plot2.SetPositions(res);
+
     }
-    IEnumerator echo2(Vector3[] res)
-    {
-        yield return new WaitForSeconds(0.2f);
-        plot3.SetPositions(res);
-    }
+
     public class RingBuffer
     {
         private List<float> m_buffer = new List<float>();
