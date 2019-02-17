@@ -17,11 +17,11 @@ public class Hand : MonoBehaviour
         _quantumMananger = FindObjectOfType<QuantumManager>();
         if(handName == "leftHand")
         {
-            transform.position = new Vector3(_initialPosition.x - 80, _initialPosition.y, transform.position.z);
+            transform.position = new Vector3(_initialPosition.x - 60, _initialPosition.y, transform.position.z);
         }
         else
         {
-            transform.position = new Vector3(_initialPosition.x + 80, _initialPosition.y, transform.position.z);
+            transform.position = new Vector3(_initialPosition.x + 60, _initialPosition.y, transform.position.z);
 
         }
     }
