@@ -26,11 +26,11 @@ public class Shark : MonoBehaviour
     public void audioChomp()
     {
         var dist = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
-        
-        var val = Random.value*10;
-        dist= Mathf.Clamp(dist, 0, 10);
+
+        var val = Random.value * 10;
+        dist = Mathf.Clamp(dist, 0, 10);
         GetComponent<AudioSource>().volume = 1 - dist / 10;
-        if (val <2) 
+        if (val < 2)
             GetComponent<AudioSource>().Play();
     }
 
@@ -39,8 +39,19 @@ public class Shark : MonoBehaviour
         Debug.Log("shark collided with hamster");
         if (collision.collider.name == "Hamster")
         {
-            PlayerPrefs.SetString("endText", "The shark has \neaten the hamster.\nNom nom.");
+            collision.collider.enabled = false;
+            collision.collider.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            GetComponent<AudioSource>().Play();
+            Time.timeScale = 0.2f;
+            StartCoroutine(killHamster());
         }
+    }
+
+    IEnumerator killHamster()
+    {
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 1;
+        PlayerPrefs.SetString("endText", "The shark has \neaten the hamster.\nNom nom.");
         GameObject.FindGameObjectWithTag("GameController").GetComponent<levelController>().endLevel();
     }
 }

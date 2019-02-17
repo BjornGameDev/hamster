@@ -10,12 +10,13 @@ public class island : MonoBehaviour
         if (collision.name == "Hamster")
         {
             PlayerPrefs.SetString("endText", "The hamster has\nreached the island");
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<levelController>().endLevel();
         }
         else if (collision.name == "Shark")
         {
             PlayerPrefs.SetString("endText", "The shark has\nreached the island");
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<levelController>().endLevel();
         }
-        GameObject.FindGameObjectWithTag("GameController").GetComponent<levelController>().endLevel();
     }
     // Start is called before the first frame update
     void Start()
