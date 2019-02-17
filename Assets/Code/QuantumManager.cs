@@ -145,12 +145,12 @@ public class QuantumManager : MonoBehaviour
 
     IEnumerator echo1(Vector3[] res)
     {
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.1f);
         plot2.SetPositions(res);
     }
     IEnumerator echo2(Vector3[] res)
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.2f);
         plot3.SetPositions(res);
     }
 
