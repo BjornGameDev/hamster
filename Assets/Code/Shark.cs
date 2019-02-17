@@ -28,7 +28,7 @@ public class Shark : MonoBehaviour
             if (positions.Length > 0)
             {
                 int i = Mathf.RoundToInt(((transform.position.x + 20f) / 40f) * positions.Length);
-                float difference = 0.03f + (positions[i].y - positions[i + 1].y);
+                float difference = 0.06f + (positions[i].y - positions[i + 1].y);
                 transform.position = new Vector3(transform.position.x + difference, positions[i].y, 0);
             }
         }
