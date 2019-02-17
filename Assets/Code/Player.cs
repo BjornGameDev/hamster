@@ -39,4 +39,15 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+
+        if (collision.collider.name == "Collider")
+        {
+            _rigidBody2D.AddForce(new Vector2(0,2),ForceMode2D.Impulse);
+
+        }
+    }
 }
