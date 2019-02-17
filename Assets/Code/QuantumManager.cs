@@ -90,10 +90,13 @@ public class QuantumManager : MonoBehaviour
     {
         plotBuffer = new Vector3[512];
         plotPositions = new Vector3[512];
-        for(int i = 0; i < plotPositions.Length; i++)
+        for (int i = 0; i < 512; i++)
         {
-            plotPositions[i] = new Vector3(((40/512)*i)-20f, 0, 0);
+            plotPositions[i] = new Vector3(((40f / 512f) * i) - 20f, 0, 0);
+            plotBuffer[i] = new Vector3(((40f / 512f) * i) - 20f, 0, 0);
         }
+        m_plotRenderer.SetPositions(plotPositions);
+
         ResetUI();
         if (m_state != State.Started)
             StartGame();

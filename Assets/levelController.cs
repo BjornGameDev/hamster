@@ -6,7 +6,7 @@ public class levelController : MonoBehaviour
 {
     public void endLevel()
     {
-        StartCoroutine(changeScene());
+        //StartCoroutine(changeScene());
     }
     IEnumerator changeScene()
     {
@@ -16,11 +16,11 @@ public class levelController : MonoBehaviour
         GetComponent<UnityEngine.UI.Image>().color = col;
         if (col.a >= 1)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("endGame");
+           // UnityEngine.SceneManagement.SceneManager.LoadScene("endGame");
         }
         else
         {
-            StartCoroutine(changeScene());
+          //  StartCoroutine(changeScene());
         }
     }
     // Update is called once per frame
