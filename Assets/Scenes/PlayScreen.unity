@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6704647, g: 0.72703356, b: 0.7445135, a: 1}
+  m_IndirectSpecularColor: {r: 0.67030513, g: 0.7270331, b: 0.7444637, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1954,15 +1954,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1822571950161617378, guid: 5366b6ebb4e50134f8b0fe1127290995,
+    - target: {fileID: 971803928452823506, guid: 5366b6ebb4e50134f8b0fe1127290995,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
+      propertyPath: m_LocalPosition.x
+      value: -13.8
       objectReference: {fileID: 0}
-    - target: {fileID: 1822571950161617378, guid: 5366b6ebb4e50134f8b0fe1127290995,
+    - target: {fileID: 971803928452823506, guid: 5366b6ebb4e50134f8b0fe1127290995,
         type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 0
+      propertyPath: m_LocalPosition.y
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 659706768170823324, guid: 5366b6ebb4e50134f8b0fe1127290995,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5366b6ebb4e50134f8b0fe1127290995, type: 3}
