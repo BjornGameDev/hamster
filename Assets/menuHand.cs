@@ -20,6 +20,6 @@ public class menuHand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Input.GetAxis(axisName) * Time.deltaTime, 0, 0);
+        transform.Translate(Input.GetAxis(axisName) * Time.deltaTime * 3, 0, 0);
     }
 }
