@@ -137,20 +137,20 @@ public class QuantumManager : MonoBehaviour
                 plotPositions[i] = Vector3.Lerp(plotPositions[i], plotBuffer[i], Time.deltaTime);
             }
             m_plotRenderer.SetPositions(plotPositions);
-            StartCoroutine(echo1(plotPositions));
-            StartCoroutine(echo2(plotPositions));
+            StartCoroutine(echo1(plotBuffer));
+            StartCoroutine(echo2(plotBuffer));
         }
     }
 
 
     IEnumerator echo1(Vector3[] res)
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(.2f);
         plot2.SetPositions(res);
     }
     IEnumerator echo2(Vector3[] res)
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(.3f);
         plot3.SetPositions(res);
     }
 
