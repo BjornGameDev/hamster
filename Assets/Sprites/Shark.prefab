@@ -75,7 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2ad5ae4cc5463d4aa11f2e73ab67340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropped: 0
 --- !u!50 &3124997417373835435
 Rigidbody2D:
   serializedVersion: 4
@@ -109,7 +108,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e66581bb2ecad7d429b6850a23d54232, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.249
+  m_Volume: 1
   m_Pitch: 0.85
   Loop: 0
   Mute: 0
